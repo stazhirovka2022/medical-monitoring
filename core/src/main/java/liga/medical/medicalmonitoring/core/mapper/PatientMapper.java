@@ -10,7 +10,7 @@ import java.util.Objects;
 @Component
 public class PatientMapper {
 
-    ModelMapper modelMapper;
+    ModelMapper modelMapper = MappingUtils.modelMapper();
 
     public Patient toEntity(PatientDto dto) {
         return Objects.isNull(dto) ? null : modelMapper.map(dto, Patient.class);

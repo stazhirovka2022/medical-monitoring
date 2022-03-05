@@ -1,6 +1,6 @@
 package liga.medical.medicalmonitoring.core.service;
 
-import liga.medical.medecalmonitoring.utils.PatientMapper;
+import liga.medical.medicalmonitoring.core.mapper.PatientMapper;
 import liga.medical.medicalmonitoring.dto.PatientDto;
 import org.springframework.stereotype.Service;
 import liga.medical.medicalmonitoring.core.repository.PatientDtoRepository;
@@ -23,7 +23,4 @@ public class PatientServiceImpl {
         return mapper.toDto(repository.save(mapper.toEntity(dto)));
     }
 
-    public PatientDto findByName(String name) {
-        return mapper.toDto(repository.findByName(name));
-    }
 }

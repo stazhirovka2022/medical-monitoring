@@ -4,12 +4,18 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.time.OffsetDateTime;
 
+@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class PatientDto extends AbstractDto {
+public class PatientDto {
+
+    @Id
+    private Long id;
 
     private String name;
 
@@ -26,7 +32,5 @@ public class PatientDto extends AbstractDto {
     private String passportNumber;
 
     private String phoneNumber;
-
-//    private MedicalHistory medicalHistory;
 
 }

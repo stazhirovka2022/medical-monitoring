@@ -1,6 +1,6 @@
 package liga.medical.medicalmonitoring.core.service;
 
-import liga.medical.medecalmonitoring.utils.MedicalHistoryMapper;
+import liga.medical.medicalmonitoring.core.mapper.MedicalHistoryMapper;
 import liga.medical.medicalmonitoring.dto.MedicalHistoryDto;
 import org.springframework.stereotype.Service;
 import liga.medical.medicalmonitoring.core.repository.MedicalHistoryDtoRepository;
@@ -23,9 +23,5 @@ public class MedicalHistoryServiceImpl {
     public MedicalHistoryDto save(MedicalHistoryDto dto) {
         return mapper.toDto(repository.save(mapper.toEntity(dto)));
     }
-
-    public MedicalHistoryDto findById(Long id) {
-        return mapper.toDto(repository.findById(id));
-    }
-
+    
 }

@@ -12,10 +12,17 @@ public class RabbitMqListener {
 
     Logger logger = LoggerFactory.getLogger(RabbitMqListener.class);
 
-    @RabbitListener(queues = "appQueue")
+    /**
+     * Обрабатываем сообщение.
+     *
+     * @param message сообщение
+     */
+    @RabbitListener(queues = "patient-alert")
     public void processAppQueue(String message) {
 
-        logger.info("Recieved from appQueue: {}", message);
+        // реализовать сохранение в БД случаев на которые должны реагировать
+        // отслеживать скорую, которая освобождается и передавать информацию на вызов
+        logger.info("Получено сообщенеи об ухудшении состояния пациента: {}", message);
     }
 
 }

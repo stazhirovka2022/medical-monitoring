@@ -37,7 +37,7 @@ public class RabbitConfiguration {
     //Очередь с названием
     @Bean
     public Queue appQueue() {
-        return new Queue("appQueue");
+        return new Queue("patient-alert");
     }
 
     //Получатель сообщений, читающий очереди

@@ -15,7 +15,7 @@ import java.net.UnknownHostException;
 @RestController
 public class MessageController {
 
-    Logger logger = LoggerFactory.getLogger(MessageController.class);
+    Logger log = LoggerFactory.getLogger(MessageController.class);
     String hostname = "Unknown";
 
     private final AmqpTemplate template;
@@ -27,7 +27,8 @@ public class MessageController {
 
     @PostMapping("/send")
     public ResponseEntity<String> send(@RequestBody String message) {
-        logger.info("Sending to appQueue");
+
+        log.info("Sending to appQueue");
         template.convertAndSend("appQueue", message);
 
         try {
